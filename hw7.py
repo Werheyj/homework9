@@ -2,7 +2,7 @@ def is_prime(func):
     def wrapper(*args):
         result_sum = func(*args)
         if result_sum <= 1:
-            print('Сложное')
+            print('Число не натуральное или равно 1')
             return result_sum
 
         for a in range(2, int(result_sum ** 0.5) + 1):
