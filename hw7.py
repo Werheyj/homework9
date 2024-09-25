@@ -1,13 +1,17 @@
 def is_prime(func):
     def wrapper(*args):
         result_sum = func(*args)
-        for a in range(1, 10):
+        if result_sum <= 1:
+            print('Сложное')
+            return result_sum
+
+        for a in range(2, int(result_sum ** 0.5) + 1):
             if result_sum % a == 0:
                 print('Сложное')
                 return result_sum
-            else:
-                print('Простое')
-                return result_sum
+
+        print('Простое')
+        return result_sum
     return wrapper
 
 
