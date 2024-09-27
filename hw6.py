@@ -1,14 +1,11 @@
 def all_variants(text):
     length = len(text)
-    result = []
-    stack = [('', 0)]
-    while stack:
-        current, index = stack.pop()
-        if current:
-            result.append(current)
-        for s in range(index, length):
-            stack.append((current + text[s], s + 1))
-    yield result
+    for j in range(length + 1):
+        yield text[:j]
+    for j in range(length + 1):
+        yield text[1:j]
+    for j in range(length + 1):
+        yield text[2:j]
 
 
 a = all_variants('abc')
