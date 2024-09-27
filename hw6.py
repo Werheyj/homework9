@@ -8,7 +8,7 @@ def all_variants(text):
             result.append(current)
         for s in range(index, length):
             stack.append((current + text[s], s + 1))
-    return result
+    yield result
 
 
 a = all_variants('abc')
